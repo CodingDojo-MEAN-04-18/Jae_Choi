@@ -24,21 +24,25 @@ function Ninja(name) {
     const strength = 3;
     
     // Add methods to the Ninja prototype
+    // Log the Ninja's name to the console
     Ninja.prototype.sayName = function() {
         console.log("My ninja name is " + this.name + "!");
         return this;
     };
 
+    // Shows the Ninja's Strength and Speed, and their Health
     Ninja.prototype.showStats = function() {
         console.log("Name: " + this.name + ", " + "Health: " + this.health + ", " + "Speed: " + speed + ", " + "Strength: " + strength);
         return this;
     };
 
+    // Adds +10 Health to the Ninja
     Ninja.prototype.drinkSake = function() {
         this.health += 10;
         return this;
     };
 
+    // Takes another Ninja instance and subtracts 5 Health from the Ninja passed in
     Ninja.prototype.punch = function(punchReceiver) {
         // Validation to only accept instances of the Ninja class
         if (punchReceiver instanceof Ninja) {
@@ -50,6 +54,7 @@ function Ninja(name) {
         return this;
     };
 
+    // Subtracts 15 Health for each point of Strength the calling Ninja has, and like .punch() will take another Ninja instance
     Ninja.prototype.kick = function(kickReceiver) {
         // Validation to only accept instances of the Ninja class
         if (kickReceiver instanceof Ninja) {
