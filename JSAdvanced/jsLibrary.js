@@ -15,7 +15,7 @@ var _ = {
             let memo = arr[0];
             el = 1;
         }
-        for(let i = el; i < arr.length; i ++) {
+        for(let i = el; i < arr.length; i++) {
             let memo = myCallback(arr[i], memo);
         }
         return memo;
