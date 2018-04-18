@@ -2,13 +2,17 @@
   <body>
     <button id="someButton">This is Some Button</button>
     <script>
-             var button = document.getElementById("someButton")
-
-button.addEventListener("click", whatToDoOnClick);
-
-function whatToDoOnClick() {
-  alert("You did it!");
+function doSomething(possibleCallback) {
+  if (typeof(possibleCallback) === 'function'){
+    console.log('possibleCallback is a callback!');
+    possibleCallback(); //we can invoke the callback!
+  }
+  else {
+    console.log('possibleCallback: ', possibleCallback, ' is not a callback function.');
+  }
 }
+doSomething(function myCallback(){ console.log('yes, I am a callback!') });
+doSomething('string');
        </script>
   </body>
 </html>
