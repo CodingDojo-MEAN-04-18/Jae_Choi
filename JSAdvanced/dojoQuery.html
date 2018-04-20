@@ -16,11 +16,14 @@ The ability to hover on an HTML element with a specific id. -->
     <button id="someOtherIdForSomeOtherButton">Hover over here!</button>
 
     <script>
-        function $Dojo(id){
+        ( function() {
+
+            function $Dojo(id){
             this.id = document.getElementById(id)
             this.click = function(callback){
                 this.id.addEventListener("click", callback)
             }
+
             this.hover = function(over,out){
                 this.id.addEventListener("mouseover", over);
                 this.id.addEventListener("mouseout", out);
@@ -31,9 +34,12 @@ The ability to hover on an HTML element with a specific id. -->
         $Dojo("someIdForSomeButton").click(
             function() { 
                 console.log("The button was clicked!") });
+
         $Dojo("someOtherIdForSomeOtherButton").hover(
             function() { 
                 console.log("The button was hovered on!")});
+                
+        }());
     </script>
 </body>
 </html>
