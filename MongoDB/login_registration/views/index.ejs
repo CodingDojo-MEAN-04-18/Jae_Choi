@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<title>Login and Registration</title>
+	</head>
+	<body>
+		<div class="container">
+
+			<% if(typeof(error) != 'undefined') { %>
+	            <p><%= error %></p>
+	        <% } %>
+
+	        <% if(typeof(errors) != 'undefined' ) { %>
+	            <% for (var x in errors) { %>
+	                <h3><%= errors[x].message %></h3>
+	            <% } %>
+	        <% } %>
+
+
+			<div id="login">
+	            <h1>Login</h1>
+	            <form method="POST" action="/login">
+	                
+	                <table>
+	                    <tr>
+	                        <td><label for="email">Email: </label></td>
+	                        <td><input type="text" name="email"></td>
+	                    </tr>
+	                    <tr>
+	                        <td><label for="password">Password:</label></td>
+	                        <td><input type="password" name="password"></td>
+	                    </tr>
+	                </table>
+	                <p class="submit_button">
+	                    <input type="submit" value="Login">
+	                </p>
+	            </form>
+	        </div>
+
+			<div id="registration">
+				<h1>Registration</h1>
+	            <form method="POST" action="/register">
+	                <table>
+	                    <tr>
+	                        <td><label for="first_name">First Name:</label></td>
+	                        <td><input type="text" name="first_name"></td>
+	                    </tr>
+	                    <tr>
+	                        <td><label for="last_name">Last Name:</label></td>
+	                        <td><input type="text" name="last_name"></td>
+	                    </tr>
+	                    <tr>
+	                    	<td><label for="birthday">Birthday:</label></td>
+	                    	<td><input type="date" name="birthday"></td>
+	                    </tr>
+	                    <tr>
+	                        <td><label for="email">Email:</label></td>
+	                        <td><input type="text" name="email"></td>
+	                    </tr>
+	                    <tr>
+	                        <td><label for="password">Password:</label></td>
+	                        <td><input type="password" name="password"></td>
+	                    </tr>
+	                    <tr>
+	                        <td><label for="c_password">Confirm PW:</label></td>
+	                        <td><input type="password" name="c_password"></td>
+	                    </tr>
+	                </table>
+	                <p class="submit_button">
+	                    <input type="submit" value="Register">
+	                </p>
+	            </form>
+	        </div>
+		</div>
+	</body>
+</html>
